@@ -1,0 +1,32 @@
+{
+  "name": "ipfs-amorph-utils",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/safezero/ipfs-amorph-utils.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/safezero/ipfs-amorph-utils/issues"
+  },
+  "homepage": "https://github.com/safezero/ipfs-amorph-utils#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-amorph": "0.0.2",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "amorph": "^1.1.0",
+    "amorph-base58": "^1.0.0",
+    "amorph-buffer": "^1.1.1",
+    "arguguard": "0.0.5",
+    "ipfs-merkle-dag": "^0.7.3",
+    "ipfs-unixfs": "^0.1.10"
+  }
+}
