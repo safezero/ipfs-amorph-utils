@@ -18,14 +18,19 @@ exports.getUnixFileMultihash = function getUnixMultihash(file) {
 
 exports.stripSha2256Multihash = function stripSha256Multihash(multihash) {
   arguguard('stripSha2256Multihash', [Amorph], arguments)
-  return multihash.as('array', (array) => {
-    return array.slice(2)
+  return multihash.as('buffer', (buffer) => {
+    return Buffer.from(buffer).slice(2)
   })
 }
 
+const prefix = new Buffer([0x12, 32])
+
 exports.unstripSha2256Hash = function unstripSha2256Hash(multihash) {
   arguguard('unstripSha2256Hash', [Amorph], arguments)
-  return multihash.as('array', (array) => {
-    return [0x12, 32].concat(array)
+  return multihash.as('buffer', (buffer) => {
+    return Buffer.concat([
+      prefix,
+      buffer
+    ])
   })
 }
